@@ -1,0 +1,515 @@
+2020-08-11 07:28:57 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [1049] Unknown database 'photo-album' in /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/db/Connection.php:705
+Stack trace:
+#0 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/db/Connection.php(705): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/db/Connection.php(626): yii\db\Connection->createPdoInstance()
+#2 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/db/Connection.php(1025): yii\db\Connection->open()
+#3 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/db/Connection.php(1012): yii\db\Connection->getMasterPdo()
+#4 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/db/Command.php(255): yii\db\Connection->getSlavePdo()
+#5 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/db/Command.php(1154): yii\db\Command->prepare(true)
+#6 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/db/Command.php(401): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/db/mysql/Schema.php(319): yii\db\Command->queryAll()
+#8 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/db/mysql/Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/db/Schema.php(757): yii\db\mysql\Schema->loadTableSchema('migration')
+#10 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/db/Schema.php(193): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#11 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/controllers/MigrateController.php(211): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#12 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(877): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#13 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(169): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#14 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#15 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#16 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#17 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/Controller.php(181): yii\base\Controller->runAction('', Array)
+#18 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/Module.php(528): yii\console\Controller->runAction('', Array)
+#19 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate', Array)
+#20 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate', Array)
+#21 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#22 /Users/hogin/vue/photo-album/yii(20): yii\base\Application->run()
+#23 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [1049] Unknown database 'photo-album' in /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/db/Connection.php:637
+Stack trace:
+#0 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/db/Connection.php(1025): yii\db\Connection->open()
+#1 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/db/Connection.php(1012): yii\db\Connection->getMasterPdo()
+#2 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/db/Command.php(255): yii\db\Connection->getSlavePdo()
+#3 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/db/Command.php(1154): yii\db\Command->prepare(true)
+#4 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/db/Command.php(401): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/db/mysql/Schema.php(319): yii\db\Command->queryAll()
+#6 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/db/mysql/Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/db/Schema.php(757): yii\db\mysql\Schema->loadTableSchema('migration')
+#8 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/db/Schema.php(193): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#9 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/controllers/MigrateController.php(211): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#10 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(877): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#11 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(169): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#12 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#13 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#14 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#15 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/Controller.php(181): yii\base\Controller->runAction('', Array)
+#16 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/Module.php(528): yii\console\Controller->runAction('', Array)
+#17 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate', Array)
+#18 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate', Array)
+#19 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#20 /Users/hogin/vue/photo-album/yii(20): yii\base\Application->run()
+#21 {main}
+Additional Information:
+
+2020-08-11 07:28:57 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'NVM_CD_FLAGS' => ''
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/pg/1wz56c5n3j55qmtqs6yw1jq40000gn/T/'
+    'NVM_DIR' => '/Users/hogin/.nvm'
+    'USER' => 'hogin'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.qqG7z2fIxv/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/opt/m4/bin:/Users/hogin/.nvm/versions/node/v10.15.0/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/Library/Java/JavaVirtualMachines/jdk-13.0.1.jdk/Contents/Home/bin:/Users/hogin/Library/Python/3.6/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/mysql/bin:/usr/local/opt/mysql@5.6/bin'
+    'PWD' => '/Users/hogin/vue/photo-album'
+    'JAVA_HOME' => '/Library/Java/JavaVirtualMachines/jdk-13.0.1.jdk/Contents/Home'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/hogin'
+    'LOGNAME' => 'hogin'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    'NVM_BIN' => '/Users/hogin/.nvm/versions/node/v10.15.0/bin'
+    '_' => './yii'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1597130937.5714
+    'REQUEST_TIME' => 1597130937
+    'argv' => [
+        0 => './yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2020-08-12 03:49:21 [-][-][-][error][yii\base\ErrorException:1] yii\base\ErrorException: Class 'common\libraries\db\Migration' not found in /Users/hogin/vue/photo-album/common/migrations/m200811_073334_init.php:8
+Stack trace:
+#0 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/ErrorHandler.php(0): yii\console\ErrorHandler->handleFatalError()
+#1 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(804): yii\console\controllers\MigrateController->unknown()
+#2 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/controllers/MigrateController.php(197): yii\console\controllers\MigrateController->includeMigrationFile()
+#3 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(726): yii\console\controllers\MigrateController->createMigration()
+#4 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(202): yii\console\controllers\MigrateController->migrateUp()
+#5 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/InlineAction.php(57): yii\console\controllers\MigrateController->actionUp()
+#6 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/InlineAction.php(57): ::call_user_func_array:{/Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/InlineAction.php:57}()
+#7 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/Controller.php(180): yii\base\InlineAction->runWithParams()
+#8 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/Controller.php(181): yii\console\controllers\MigrateController->runAction()
+#9 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/Module.php(528): yii\console\controllers\MigrateController->runAction()
+#10 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/Application.php(180): yii\console\Application->runAction()
+#11 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction()
+#12 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest()
+#13 /Users/hogin/vue/photo-album/yii(20): yii\console\Application->run()
+#14 {main}
+2020-08-12 03:49:19 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'NVM_CD_FLAGS' => ''
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/pg/1wz56c5n3j55qmtqs6yw1jq40000gn/T/'
+    'NVM_DIR' => '/Users/hogin/.nvm'
+    'USER' => 'hogin'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.qqG7z2fIxv/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/opt/m4/bin:/Users/hogin/.nvm/versions/node/v10.15.0/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/Library/Java/JavaVirtualMachines/jdk-13.0.1.jdk/Contents/Home/bin:/Users/hogin/Library/Python/3.6/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/mysql/bin:/usr/local/opt/mysql@5.6/bin'
+    'PWD' => '/Users/hogin/vue/photo-album'
+    'JAVA_HOME' => '/Library/Java/JavaVirtualMachines/jdk-13.0.1.jdk/Contents/Home'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/hogin'
+    'LOGNAME' => 'hogin'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    'NVM_BIN' => '/Users/hogin/.nvm/versions/node/v10.15.0/bin'
+    '_' => './yii'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1597204159.4141
+    'REQUEST_TIME' => 1597204159
+    'argv' => [
+        0 => './yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2020-08-12 05:50:45 [-][-][-][error][yii\base\ErrorException:1] yii\base\ErrorException: Class 'common\libraries\db\Migration' not found in /Users/hogin/vue/photo-album/common/migrations/m200811_073334_init.php:8
+Stack trace:
+#0 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/ErrorHandler.php(0): yii\console\ErrorHandler->handleFatalError()
+#1 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(804): yii\console\controllers\MigrateController->unknown()
+#2 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/controllers/MigrateController.php(197): yii\console\controllers\MigrateController->includeMigrationFile()
+#3 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(726): yii\console\controllers\MigrateController->createMigration()
+#4 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(202): yii\console\controllers\MigrateController->migrateUp()
+#5 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/InlineAction.php(57): yii\console\controllers\MigrateController->actionUp()
+#6 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/InlineAction.php(57): ::call_user_func_array:{/Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/InlineAction.php:57}()
+#7 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/Controller.php(180): yii\base\InlineAction->runWithParams()
+#8 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/Controller.php(181): yii\console\controllers\MigrateController->runAction()
+#9 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/Module.php(528): yii\console\controllers\MigrateController->runAction()
+#10 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/Application.php(180): yii\console\Application->runAction()
+#11 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction()
+#12 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest()
+#13 /Users/hogin/vue/photo-album/yii(20): yii\console\Application->run()
+#14 {main}
+2020-08-12 05:50:39 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'NVM_CD_FLAGS' => ''
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/pg/1wz56c5n3j55qmtqs6yw1jq40000gn/T/'
+    'NVM_DIR' => '/Users/hogin/.nvm'
+    'USER' => 'hogin'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.qqG7z2fIxv/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/opt/m4/bin:/Users/hogin/.nvm/versions/node/v10.15.0/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/Library/Java/JavaVirtualMachines/jdk-13.0.1.jdk/Contents/Home/bin:/Users/hogin/Library/Python/3.6/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/mysql/bin:/usr/local/opt/mysql@5.6/bin'
+    'PWD' => '/Users/hogin/vue/photo-album'
+    'JAVA_HOME' => '/Library/Java/JavaVirtualMachines/jdk-13.0.1.jdk/Contents/Home'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/hogin'
+    'LOGNAME' => 'hogin'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    'NVM_BIN' => '/Users/hogin/.nvm/versions/node/v10.15.0/bin'
+    '_' => './yii'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1597211439.6795
+    'REQUEST_TIME' => 1597211439
+    'argv' => [
+        0 => './yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2020-08-12 05:54:41 [-][-][-][error][yii\base\ErrorException:1] yii\base\ErrorException: Class 'common\libraries\db\Migration' not found in /Users/hogin/vue/photo-album/common/migrations/m200811_073334_init.php:9
+Stack trace:
+#0 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/ErrorHandler.php(0): yii\console\ErrorHandler->handleFatalError()
+#1 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(804): yii\console\controllers\MigrateController->unknown()
+#2 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/controllers/MigrateController.php(197): yii\console\controllers\MigrateController->includeMigrationFile()
+#3 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(726): yii\console\controllers\MigrateController->createMigration()
+#4 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(202): yii\console\controllers\MigrateController->migrateUp()
+#5 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/InlineAction.php(57): yii\console\controllers\MigrateController->actionUp()
+#6 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/InlineAction.php(57): ::call_user_func_array:{/Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/InlineAction.php:57}()
+#7 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/Controller.php(180): yii\base\InlineAction->runWithParams()
+#8 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/Controller.php(181): yii\console\controllers\MigrateController->runAction()
+#9 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/Module.php(528): yii\console\controllers\MigrateController->runAction()
+#10 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/Application.php(180): yii\console\Application->runAction()
+#11 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction()
+#12 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest()
+#13 /Users/hogin/vue/photo-album/yii(20): yii\console\Application->run()
+#14 {main}
+2020-08-12 05:54:40 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'NVM_CD_FLAGS' => ''
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/pg/1wz56c5n3j55qmtqs6yw1jq40000gn/T/'
+    'NVM_DIR' => '/Users/hogin/.nvm'
+    'USER' => 'hogin'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.qqG7z2fIxv/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/opt/m4/bin:/Users/hogin/.nvm/versions/node/v10.15.0/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/Library/Java/JavaVirtualMachines/jdk-13.0.1.jdk/Contents/Home/bin:/Users/hogin/Library/Python/3.6/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/mysql/bin:/usr/local/opt/mysql@5.6/bin'
+    'PWD' => '/Users/hogin/vue/photo-album'
+    'JAVA_HOME' => '/Library/Java/JavaVirtualMachines/jdk-13.0.1.jdk/Contents/Home'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/hogin'
+    'LOGNAME' => 'hogin'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    'NVM_BIN' => '/Users/hogin/.nvm/versions/node/v10.15.0/bin'
+    '_' => './yii'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1597211680.8379
+    'REQUEST_TIME' => 1597211680
+    'argv' => [
+        0 => './yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2020-08-12 05:55:08 [-][-][-][error][yii\base\ErrorException:1] yii\base\ErrorException: Class 'common\libraries\db\Migration' not found in /Users/hogin/vue/photo-album/common/migrations/m200811_073334_init.php:7
+Stack trace:
+#0 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/ErrorHandler.php(0): yii\console\ErrorHandler->handleFatalError()
+#1 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(804): yii\console\controllers\MigrateController->unknown()
+#2 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/controllers/MigrateController.php(197): yii\console\controllers\MigrateController->includeMigrationFile()
+#3 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(726): yii\console\controllers\MigrateController->createMigration()
+#4 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(202): yii\console\controllers\MigrateController->migrateUp()
+#5 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/InlineAction.php(57): yii\console\controllers\MigrateController->actionUp()
+#6 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/InlineAction.php(57): ::call_user_func_array:{/Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/InlineAction.php:57}()
+#7 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/Controller.php(180): yii\base\InlineAction->runWithParams()
+#8 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/Controller.php(181): yii\console\controllers\MigrateController->runAction()
+#9 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/Module.php(528): yii\console\controllers\MigrateController->runAction()
+#10 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/Application.php(180): yii\console\Application->runAction()
+#11 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction()
+#12 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest()
+#13 /Users/hogin/vue/photo-album/yii(20): yii\console\Application->run()
+#14 {main}
+2020-08-12 05:55:07 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'NVM_CD_FLAGS' => ''
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/pg/1wz56c5n3j55qmtqs6yw1jq40000gn/T/'
+    'NVM_DIR' => '/Users/hogin/.nvm'
+    'USER' => 'hogin'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.qqG7z2fIxv/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/opt/m4/bin:/Users/hogin/.nvm/versions/node/v10.15.0/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/Library/Java/JavaVirtualMachines/jdk-13.0.1.jdk/Contents/Home/bin:/Users/hogin/Library/Python/3.6/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/mysql/bin:/usr/local/opt/mysql@5.6/bin'
+    'PWD' => '/Users/hogin/vue/photo-album'
+    'JAVA_HOME' => '/Library/Java/JavaVirtualMachines/jdk-13.0.1.jdk/Contents/Home'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/hogin'
+    'LOGNAME' => 'hogin'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    'NVM_BIN' => '/Users/hogin/.nvm/versions/node/v10.15.0/bin'
+    '_' => './yii'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1597211707.6549
+    'REQUEST_TIME' => 1597211707
+    'argv' => [
+        0 => './yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2020-08-12 07:06:36 [-][-][-][error][yii\base\InvalidConfigException] ReflectionException: Class dbMigration does not exist in /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/di/Container.php:447
+Stack trace:
+#0 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/di/Container.php(447): ReflectionClass->__construct('dbMigration')
+#1 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/di/Container.php(374): yii\di\Container->getDependencies('dbMigration')
+#2 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('dbMigration', Array, Array)
+#3 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/di/Instance.php(167): yii\di\Container->get('dbMigration')
+#4 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/di/Instance.php(137): yii\di\Instance->get(NULL)
+#5 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/controllers/MigrateController.php(183): yii\di\Instance::ensure(Object(yii\di\Instance), 'yii\\db\\Connecti...')
+#6 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/Controller.php(178): yii\console\controllers\MigrateController->beforeAction(Object(yii\base\InlineAction))
+#7 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/Controller.php(181): yii\base\Controller->runAction('', Array)
+#8 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/Module.php(528): yii\console\Controller->runAction('', Array)
+#9 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate', Array)
+#10 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate', Array)
+#11 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#12 /Users/hogin/vue/photo-album/yii(20): yii\base\Application->run()
+#13 {main}
+
+Next yii\base\InvalidConfigException: Failed to instantiate component or class "dbMigration". in /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/di/Container.php:449
+Stack trace:
+#0 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/di/Container.php(374): yii\di\Container->getDependencies('dbMigration')
+#1 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('dbMigration', Array, Array)
+#2 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/di/Instance.php(167): yii\di\Container->get('dbMigration')
+#3 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/di/Instance.php(137): yii\di\Instance->get(NULL)
+#4 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/controllers/MigrateController.php(183): yii\di\Instance::ensure(Object(yii\di\Instance), 'yii\\db\\Connecti...')
+#5 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/Controller.php(178): yii\console\controllers\MigrateController->beforeAction(Object(yii\base\InlineAction))
+#6 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/Controller.php(181): yii\base\Controller->runAction('', Array)
+#7 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/Module.php(528): yii\console\Controller->runAction('', Array)
+#8 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate', Array)
+#9 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate', Array)
+#10 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#11 /Users/hogin/vue/photo-album/yii(20): yii\base\Application->run()
+#12 {main}
+2020-08-12 07:06:36 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'NVM_CD_FLAGS' => ''
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/pg/1wz56c5n3j55qmtqs6yw1jq40000gn/T/'
+    'NVM_DIR' => '/Users/hogin/.nvm'
+    'USER' => 'hogin'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.qqG7z2fIxv/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/opt/m4/bin:/Users/hogin/.nvm/versions/node/v10.15.0/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/Library/Java/JavaVirtualMachines/jdk-13.0.1.jdk/Contents/Home/bin:/Users/hogin/Library/Python/3.6/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/mysql/bin:/usr/local/opt/mysql@5.6/bin'
+    'PWD' => '/Users/hogin/vue/photo-album'
+    'JAVA_HOME' => '/Library/Java/JavaVirtualMachines/jdk-13.0.1.jdk/Contents/Home'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/hogin'
+    'LOGNAME' => 'hogin'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    'NVM_BIN' => '/Users/hogin/.nvm/versions/node/v10.15.0/bin'
+    '_' => './yii'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1597215996.9119
+    'REQUEST_TIME' => 1597215996
+    'argv' => [
+        0 => './yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2020-08-12 07:08:52 [-][-][-][error][yii\base\ErrorException:1] yii\base\ErrorException: Class 'common\libraries\db\Migration' not found in /Users/hogin/vue/photo-album/common/migrations/m200811_073334_init.php:7
+Stack trace:
+#0 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/ErrorHandler.php(0): yii\console\ErrorHandler->handleFatalError()
+#1 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(804): yii\console\controllers\MigrateController->unknown()
+#2 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/controllers/MigrateController.php(197): yii\console\controllers\MigrateController->includeMigrationFile()
+#3 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(726): yii\console\controllers\MigrateController->createMigration()
+#4 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(202): yii\console\controllers\MigrateController->migrateUp()
+#5 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/InlineAction.php(57): yii\console\controllers\MigrateController->actionUp()
+#6 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/InlineAction.php(57): ::call_user_func_array:{/Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/InlineAction.php:57}()
+#7 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/Controller.php(180): yii\base\InlineAction->runWithParams()
+#8 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/Controller.php(181): yii\console\controllers\MigrateController->runAction()
+#9 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/Module.php(528): yii\console\controllers\MigrateController->runAction()
+#10 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/Application.php(180): yii\console\Application->runAction()
+#11 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction()
+#12 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest()
+#13 /Users/hogin/vue/photo-album/yii(20): yii\console\Application->run()
+#14 {main}
+2020-08-12 07:08:49 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'NVM_CD_FLAGS' => ''
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/pg/1wz56c5n3j55qmtqs6yw1jq40000gn/T/'
+    'NVM_DIR' => '/Users/hogin/.nvm'
+    'USER' => 'hogin'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.qqG7z2fIxv/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/opt/m4/bin:/Users/hogin/.nvm/versions/node/v10.15.0/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/Library/Java/JavaVirtualMachines/jdk-13.0.1.jdk/Contents/Home/bin:/Users/hogin/Library/Python/3.6/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/mysql/bin:/usr/local/opt/mysql@5.6/bin'
+    'PWD' => '/Users/hogin/vue/photo-album'
+    'JAVA_HOME' => '/Library/Java/JavaVirtualMachines/jdk-13.0.1.jdk/Contents/Home'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/hogin'
+    'LOGNAME' => 'hogin'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    'NVM_BIN' => '/Users/hogin/.nvm/versions/node/v10.15.0/bin'
+    '_' => './yii'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1597216129.3519
+    'REQUEST_TIME' => 1597216129
+    'argv' => [
+        0 => './yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2020-08-12 07:26:49 [-][-][-][error][yii\base\ErrorException:1] yii\base\ErrorException: Class 'common\libraries\db\Migration' not found in /Users/hogin/vue/photo-album/common/migrations/m200811_073334_init.php:7
+Stack trace:
+#0 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/ErrorHandler.php(0): yii\console\ErrorHandler->handleFatalError()
+#1 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(804): yii\console\controllers\MigrateController->unknown()
+#2 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/controllers/MigrateController.php(197): yii\console\controllers\MigrateController->includeMigrationFile()
+#3 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(726): yii\console\controllers\MigrateController->createMigration()
+#4 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(202): yii\console\controllers\MigrateController->migrateUp()
+#5 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/InlineAction.php(57): yii\console\controllers\MigrateController->actionUp()
+#6 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/InlineAction.php(57): ::call_user_func_array:{/Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/InlineAction.php:57}()
+#7 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/Controller.php(180): yii\base\InlineAction->runWithParams()
+#8 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/Controller.php(181): yii\console\controllers\MigrateController->runAction()
+#9 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/Module.php(528): yii\console\controllers\MigrateController->runAction()
+#10 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/Application.php(180): yii\console\Application->runAction()
+#11 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction()
+#12 /Users/hogin/vue/photo-album/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest()
+#13 /Users/hogin/vue/photo-album/yii(24): yii\console\Application->run()
+#14 {main}
+2020-08-12 07:26:47 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'NVM_CD_FLAGS' => ''
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/pg/1wz56c5n3j55qmtqs6yw1jq40000gn/T/'
+    'NVM_DIR' => '/Users/hogin/.nvm'
+    'USER' => 'hogin'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.qqG7z2fIxv/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/opt/m4/bin:/Users/hogin/.nvm/versions/node/v10.15.0/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/Library/Java/JavaVirtualMachines/jdk-13.0.1.jdk/Contents/Home/bin:/Users/hogin/Library/Python/3.6/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/mysql/bin:/usr/local/opt/mysql@5.6/bin'
+    'PWD' => '/Users/hogin/vue/photo-album'
+    'JAVA_HOME' => '/Library/Java/JavaVirtualMachines/jdk-13.0.1.jdk/Contents/Home'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/hogin'
+    'LOGNAME' => 'hogin'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    'NVM_BIN' => '/Users/hogin/.nvm/versions/node/v10.15.0/bin'
+    '_' => './yii'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1597217207.3693
+    'REQUEST_TIME' => 1597217207
+    'argv' => [
+        0 => './yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]

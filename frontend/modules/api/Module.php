@@ -5,6 +5,7 @@ namespace frontend\modules\api;
 use yii\base\Application;
 use yii\base\BootstrapInterface;
 use yii\rest\UrlRule;
+use yii\web\GroupUrlRule;
 
 class Module extends \yii\base\Module implements BootstrapInterface
 {
@@ -24,6 +25,13 @@ class Module extends \yii\base\Module implements BootstrapInterface
         $uniqueId = $this->getUniqueId();
 
         $app->getUrlManager()->addRules([
+            [
+                'class' => GroupUrlRule::class,
+                'prefix' => $uniqueId,
+                'rules' => array_merge(
+                    require __DIR__ . '/route-movie.php',
+                ),
+            ],
             [
                 'class' => UrlRule::class,
                 'controller' => [
@@ -129,7 +137,7 @@ class Module extends \yii\base\Module implements BootstrapInterface
                 'class' => UrlRule::class,
                 'controller' => [
                     "$uniqueId/good",
-                    "$uniqueId/movie",
+//                    "$uniqueId/movie",
                 ],
                 'extraPatterns' => [
                     'GET <action:[\w\-]+>' => '<action>',

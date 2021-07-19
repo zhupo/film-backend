@@ -2,8 +2,21 @@
 
 namespace frontend\modules\api\controllers;
 
+use frontend\modules\api\services\MovieService;
+
 class MovieController extends BaseController
 {
+    /**
+     * @var MovieService
+     */
+    private $service;
+
+    public function init()
+    {
+        parent::init();
+        $this->service = new MovieService();
+    }
+
     /**
      * @return \string[][][]
      */
@@ -21,7 +34,7 @@ class MovieController extends BaseController
                     'movie_id' => 1,
                     'movie_long' => '130分钟',
                     'name' => '驯龙高手3',
-                    'poster' => '/image/movie/hot1.jpg',
+                    'poster' => '/images/movie/hot1.jpg',
                     'price' => 45,
                     'public_date' => '2018-12-11',
                     'schedule_id' => 79,
@@ -42,7 +55,7 @@ class MovieController extends BaseController
                     'movie_id' => 1,
                     'movie_long' => '130分钟',
                     'name' => '狂暴凶狮',
-                    'poster' => '/image/movie/hot2.jpg',
+                    'poster' => '/images/movie/hot2.jpg',
                     'price' => 45,
                     'public_date' => '2018-12-11',
                     'schedule_id' => 79,
@@ -63,7 +76,7 @@ class MovieController extends BaseController
                     'movie_id' => 1,
                     'movie_long' => '130分钟',
                     'name' => '夏日友人怅',
-                    'poster' => '/image/movie/hot3.jpg',
+                    'poster' => '/images/movie/hot3.jpg',
                     'price' => 45,
                     'public_date' => '2018-12-11',
                     'schedule_id' => 79,
@@ -84,7 +97,7 @@ class MovieController extends BaseController
                     'movie_id' => 1,
                     'movie_long' => '130分钟',
                     'name' => '比悲伤更悲伤的故事',
-                    'poster' => '/image/movie/hot4.jpg',
+                    'poster' => '/images/movie/hot4.jpg',
                     'price' => 45,
                     'public_date' => '2018-12-11',
                     'schedule_id' => 79,
@@ -105,7 +118,7 @@ class MovieController extends BaseController
                     'movie_id' => 1,
                     'movie_long' => '130分钟',
                     'name' => '惊奇队长',
-                    'poster' => '/image/movie/hot5.jpg',
+                    'poster' => '/images/movie/hot5.jpg',
                     'price' => 45,
                     'public_date' => '2018-12-11',
                     'schedule_id' => 79,
@@ -126,7 +139,7 @@ class MovieController extends BaseController
                     'movie_id' => 1,
                     'movie_long' => '130分钟',
                     'name' => '我的英雄学校',
-                    'poster' => '/image/movie/hot6.jpg',
+                    'poster' => '/images/movie/hot6.jpg',
                     'price' => 45,
                     'public_date' => '2018-12-11',
                     'schedule_id' => 79,
@@ -147,7 +160,7 @@ class MovieController extends BaseController
                     'movie_id' => 1,
                     'movie_long' => '130分钟',
                     'name' => '驯龙高手3',
-                    'poster' => '/image/movie/hot7.jpg',
+                    'poster' => '/images/movie/hot7.jpg',
                     'price' => 45,
                     'public_date' => '2018-12-11',
                     'schedule_id' => 79,
@@ -168,7 +181,7 @@ class MovieController extends BaseController
                     'movie_id' => 1,
                     'movie_long' => '130分钟',
                     'name' => '驯龙高手3',
-                    'poster' => '/image/movie/hot8.jpg',
+                    'poster' => '/images/movie/hot8.jpg',
                     'price' => 45,
                     'public_date' => '2018-12-11',
                     'schedule_id' => 79,
@@ -189,7 +202,7 @@ class MovieController extends BaseController
                     'movie_id' => 1,
                     'movie_long' => '130分钟',
                     'name' => '驯龙高手3',
-                    'poster' => '/image/movie/hot9.jpg',
+                    'poster' => '/images/movie/hot9.jpg',
                     'price' => 45,
                     'public_date' => '2018-12-11',
                     'schedule_id' => 79,
@@ -201,6 +214,30 @@ class MovieController extends BaseController
                     'wish_num' => 0,
                 ],
             ]
+        ];
+    }
+
+    /**
+     * @param $movieName
+     * @return array
+     */
+    public function actionSearch($movieName)
+    {
+        return [
+            'statusCode' => 200,
+            'data' => $this->service->searchByName($movieName)
+        ];
+    }
+
+    /**
+     * @param $cinemaName
+     * @return array
+     */
+    public function actionSearchCinema($cinemaName)
+    {
+        return [
+            'statusCode' => 200,
+            'data' => $this->service->searchCinemaByName($cinemaName),
         ];
     }
 }

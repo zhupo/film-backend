@@ -33,7 +33,7 @@ class GoodController extends BaseController
                 'title' => '华为荣耀plus 荣耀青春娱乐版，(HUAWEI)',
                 'marketPrece' => 2499,
                 'sellPrice' => 2195,
-                'url' => 'image/product/img.png',
+                'url' => 'images/product/img.png',
                 'message' => '荣耀6plus，该机型分为两款型号，分别为PE1和PE2',
                 'click' => 999,
                 'stockQuantity' => 666,
@@ -45,7 +45,7 @@ class GoodController extends BaseController
                 'title' => '小米8',
                 'marketPrece' => 3699,
                 'sellPrice' => 2595,
-                'url' => 'image/product/img_1.png',
+                'url' => 'images/product/img_1.png',
                 'message' => '小米8，该机型分为两款型号，分别为PE1和PE2',
                 'click' => 666,
                 'stockQuantity' => 888,
@@ -57,7 +57,7 @@ class GoodController extends BaseController
                 'title' => '华为荣耀8',
                 'marketPrece' => 2699,
                 'sellPrice' => 2295,
-                'url' => 'image/product/img_2.png',
+                'url' => 'images/product/img_2.png',
                 'message' => '荣耀8，该机型分为两款型号，分别为PE1和PE2',
                 'click' => 999,
                 'stockQuantity' => 666,
@@ -69,7 +69,7 @@ class GoodController extends BaseController
                 'title' => '苹果12puls',
                 'marketPrece' => 9999,
                 'sellPrice' => 9199,
-                'url' => 'image/product/img_3.png',
+                'url' => 'images/product/img_3.png',
                 'message' => '苹果12plus，该机型分为两款型号，分别为PE1和PE2',
                 'click' => 999,
                 'stockQuantity' => 666,
@@ -81,7 +81,7 @@ class GoodController extends BaseController
                 'title' => '三星pro',
                 'marketPrece' => 2499,
                 'sellPrice' => 2195,
-                'url' => 'image/product/img_4.png',
+                'url' => 'images/product/img_4.png',
                 'message' => '三星pro，该机型分为两款型号，分别为PE1和PE2',
                 'click' => 999,
                 'stockQuantity' => 666,
@@ -93,7 +93,7 @@ class GoodController extends BaseController
                 'title' => '锤子手机',
                 'marketPrece' => 9998,
                 'sellPrice' => 8888,
-                'url' => 'image/product/img_1.png',
+                'url' => 'images/product/img_1.png',
                 'message' => '锤子手机，该机型分为两款型号，分别为PE1和PE2',
                 'click' => 999,
                 'stockQuantity' => 666,
@@ -105,7 +105,7 @@ class GoodController extends BaseController
                 'title' => '三星pro',
                 'marketPrece' => 2499,
                 'sellPrice' => 2195,
-                'url' => 'image/product/img_2.png',
+                'url' => 'images/product/img_2.png',
                 'message' => '三星pro，该机型分为两款型号，分别为PE1和PE2',
                 'click' => 999,
                 'stockQuantity' => 666,
@@ -117,7 +117,7 @@ class GoodController extends BaseController
                 'title' => '锤子手机',
                 'marketPrece' => 9998,
                 'sellPrice' => 8888,
-                'url' => 'image/product/img_3.png',
+                'url' => 'images/product/img_3.png',
                 'message' => '锤子手机，该机型分为两款型号，分别为PE1和PE2',
                 'click' => 999,
                 'stockQuantity' => 666,
@@ -146,10 +146,10 @@ class GoodController extends BaseController
         return [
             'items' => [
                 [
-                    'url' => 'image/product/img.png'
+                    'url' => 'images/product/img.png'
                 ],
                 [
-                    'url' => 'image/product/img_1.png'
+                    'url' => 'images/product/img_1.png'
                 ],
             ]
         ];

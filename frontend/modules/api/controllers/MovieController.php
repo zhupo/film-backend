@@ -240,4 +240,25 @@ class MovieController extends BaseController
             'data' => $this->service->searchCinemaByName($cinemaName),
         ];
     }
+
+    /**
+     * Path /movies/view?id={$id}
+     * @param $id
+     * @return array
+     */
+    public function actionView($id)
+    {
+        return [
+            'statusCode' => 200,
+            'data' => $this->service->view($id)
+        ];
+    }
+
+    public function actionIsWishMovie($userId, $movieId)
+    {
+        return [
+            'statusCode' => 200,
+            'data' => $this->service->isWishMovie($userId, $movieId)
+        ];
+    }
 }

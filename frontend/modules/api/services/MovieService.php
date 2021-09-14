@@ -14,14 +14,53 @@ class MovieService extends BaseService
     {
         $sql = $this->getSearchByNameSql($name);
         $name = '%' . $name . '%';
-        return Yii::$app->db->createCommand($sql)->bindParam(':name', $name)->queryAll();
+        $movies = Yii::$app->db->createCommand($sql)->bindParam(':name', $name)->queryAll();
+        $data = [];
+        foreach ($movies as $movie) {
+            $data[$movie['movie_id']] = $movie;
+        }
+
+        return array_values($data);
     }
 
     public function searchCinemaByName($name)
     {
-        $sql = $this->getSearchCinemaByNameSql($name);
+        $sql = $this->getSearchCinemaByNameSql();
         $name = '%' . $name . '%';
         return Yii::$app->db->createCommand($sql)->bindParam(':name', $name)->queryAll();
+    }
+
+    public function view($id)
+    {
+        $sql = $this->getViewMovieSql();
+        return Yii::$app->db->createCommand($sql)->bindParam(':movieId', $id)->query();
+    }
+
+    public function isWishMovie($userId, $movieId)
+    {
+        $sql = $this->getIsWishMovieSql();
+        $values = [
+            ':userId' => $userId,
+            ':movieId' => $movieId,
+        ];
+        $result = Yii::$app->db->createCommand($sql)->bindValues($values)->query();
+        return empty($result) ? false : true;
+    }
+
+    private function getIsWishMovieSql()
+    {
+        return <<<SQL
+SELECT * FROM t_wishmovie WHERE user_id = :userId AND movie_id = :movieId LIMIT 1;
+SQL;
+
+    }
+
+    public function getViewMovieSql()
+    {
+        return <<<SQL
+SELECT * FROM t_movie WHERE movie_id = :movieId LIMIT 1;
+SQL;
+
     }
 
     public function getSearchCinemaByNameSql()

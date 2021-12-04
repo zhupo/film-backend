@@ -29,7 +29,7 @@ class Module extends \yii\base\Module implements BootstrapInterface
                 'class' => GroupUrlRule::class,
                 'prefix' => $uniqueId,
                 'rules' => array_merge(
-                    require __DIR__ . '/route-movie.php',
+                    require __DIR__ . '/route-movie.php'
                 )
             ],
             [

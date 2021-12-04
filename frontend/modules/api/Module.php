@@ -30,7 +30,7 @@ class Module extends \yii\base\Module implements BootstrapInterface
                 'prefix' => $uniqueId,
                 'rules' => array_merge(
                     require __DIR__ . '/route-movie.php',
-                ),
+                )
             ],
             [
                 'class' => UrlRule::class,
@@ -45,7 +45,7 @@ class Module extends \yii\base\Module implements BootstrapInterface
                     'PATCH {id}/<action:[\w\-]+>' => '<action>',
                     'POST <action:[\w\-]+>' => '<action>',
                 ]
-            ],
+            ]
         ]);
 //        echo json_encode($app->getUrlManager()->rules);die;
     }

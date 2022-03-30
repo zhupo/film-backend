@@ -33,7 +33,7 @@ class MovieService extends BaseService
     public function view($id)
     {
         $sql = $this->getViewMovieSql();
-        return Yii::$app->db->createCommand($sql)->bindParam(':movieId', $id)->query();
+        return Yii::$app->db->createCommand($sql)->bindParam(':movieId', $id)->queryOne();
     }
 
     public function isWishMovie($userId, $movieId)

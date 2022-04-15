@@ -29,7 +29,9 @@ class Module extends \yii\base\Module implements BootstrapInterface
                 'class' => GroupUrlRule::class,
                 'prefix' => $uniqueId,
                 'rules' => array_merge(
-                    require __DIR__ . '/route-movie.php'
+                    require __DIR__ . '/route-movie.php',
+                    require __DIR__ . '/route-cinema.php',
+                    require __DIR__ . '/route-user.php',
                 )
             ],
             [
@@ -39,7 +41,7 @@ class Module extends \yii\base\Module implements BootstrapInterface
                 ],
                 'extraPatterns' => [
                     'DELETE {id}/<action:[\w\-]+>' => '<action>',
-
+                    'GET <action:[\w\-]+>' => '<action>',
                     'GET {id}/<action:[\w\-]+>' => '<action>',
                     'PUT {id}/<action:[\w\-]+>' => '<action>',
                     'PATCH {id}/<action:[\w\-]+>' => '<action>',

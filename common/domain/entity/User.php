@@ -14,7 +14,7 @@ class User extends Entity
 {
     public static function tableName()
     {
-        return 'user';
+        return 't_user';
     }
 
     public function validatePassword($password)

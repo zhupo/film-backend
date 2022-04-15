@@ -77,10 +77,25 @@ class AuthController extends BaseController
         ];
     }
 
-    public function actionLogout()
+    /**
+     * @return array
+     */
+    public function actionLoginInfo(): array
     {
-        Yii::$app->session->removeAll();
-        Yii::$app->response->getCookies()->removeAll();
+        $isLogin = !$this->service->isGuest();
+        return [
+            'isLogin' => $isLogin,
+            'userId' => $isLogin ? Yii::$app->user->identity->user->user_id : 0
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    public function actionLogout(): array
+    {
+//        Yii::$app->session->removeAll();
+//        Yii::$app->response->getCookies()->removeAll();
         return [
             'logout' => Yii::$app->user->logout(),
         ];

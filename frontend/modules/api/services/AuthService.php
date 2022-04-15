@@ -2,7 +2,9 @@
 
 namespace frontend\modules\api\services;
 
+use common\domain\entity\User;
 use frontend\models\LoginForm;
+use Yii;
 use yii\base\BaseObject;
 
 /**
@@ -16,8 +18,14 @@ class AuthService extends BaseObject
     {
         if ($form->login()) {
             return [
+                'success_code' => 200,
                 'url' => '/site/index'
             ];
         }
+    }
+
+    public function isGuest()
+    {
+        return Yii::$app->user->isGuest;
     }
 }

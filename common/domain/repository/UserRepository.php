@@ -14,6 +14,11 @@ class UserRepository extends BaseObject
 
     public function findOneByLogin($username)
     {
-        return User::findOne(['userName' => $username]);
+        return User::findOne(['user_name' => $username]);
+    }
+
+    public function findOneById($id)
+    {
+        return User::findOne(['user_id' => $id]);
     }
 }

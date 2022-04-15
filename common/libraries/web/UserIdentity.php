@@ -7,9 +7,13 @@ use common\domain\repository\UserRepository;
 use yii\base\Model;
 use yii\web\IdentityInterface;
 
+/**
+ * Class UserIdentity
+ * @property UserEntity $user
+ * @package common\libraries\web
+ */
 class UserIdentity extends Model implements IdentityInterface
 {
-
     /**
      * @var UserEntity
      */
@@ -65,6 +69,15 @@ class UserIdentity extends Model implements IdentityInterface
      */
     public static function findIdentity($id)
     {
+        $userRepo = new UserRepository();
+        /* @var UserEntity $user */
+        $user = $userRepo->findOneById($id);
+        if ($user) {
+            $userIdentity = new static();
+            $userIdentity->setUser($user);
+            return $userIdentity;
+        }
+        return null;
         // TODO: Implement findIdentity() method.
     }
 
@@ -88,7 +101,7 @@ class UserIdentity extends Model implements IdentityInterface
      */
     public function getId()
     {
-        return $this->user->id;
+        return $this->user->user_id;
     }
 
     /**

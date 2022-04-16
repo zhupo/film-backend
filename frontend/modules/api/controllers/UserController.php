@@ -21,7 +21,6 @@ class UserController extends BaseController
     {
         return [
             'statusCode' => 200,
-            'isLogin' => \Yii::$app->user->identity,
             'data' => $this->service->view($userId)
         ];
     }

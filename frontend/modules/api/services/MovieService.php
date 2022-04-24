@@ -6,6 +6,12 @@ use Yii;
 
 class MovieService extends BaseService
 {
+    public function getMovies()
+    {
+        $sql = $this->getMoviesSql();
+        return Yii::$app->db->createCommand($sql)->queryAll();
+    }
+
     /**
      * @param string $name
      * @return array
@@ -84,5 +90,15 @@ INNER JOIN t_movie ON t_schedule.movie_id = t_movie.movie_id
 WHERE name LIKE :name;
 SQL;
 
+    }
+
+    /**
+     * @return string
+     */
+    public function getMoviesSql():string
+    {
+        return <<<SQL
+SELECT * FROM t_schedule INNER JOIN t_movie ON t_schedule.movie_id = t_movie.movie_id;
+SQL;
     }
 }

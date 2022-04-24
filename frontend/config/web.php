@@ -29,7 +29,7 @@ $config = [
             'parsers' => [
                 'application/json' => 'yii\web\JsonParser',
             ],
-            'enableCsrfValidation' => true,
+            'enableCsrfValidation' => false,
             'hostInfo' => $params['frontend']['baseUrl'],
         ],
         'response' => [

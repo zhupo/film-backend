@@ -84,7 +84,6 @@ class AuthController extends BaseController
     {
         $isLogin = !$this->service->isGuest();
         return [
-            'isLogin' => $isLogin,
             'userId' => $isLogin ? Yii::$app->user->identity->user->user_id : 0
         ];
     }

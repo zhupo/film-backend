@@ -19,7 +19,7 @@ class AuthService extends BaseObject
         if ($form->login()) {
             return [
                 'success_code' => 200,
-                'url' => '/site/index'
+                'userId' => Yii::$app->user->identity->getId()
             ];
         }
     }

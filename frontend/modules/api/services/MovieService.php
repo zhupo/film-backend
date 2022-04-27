@@ -42,23 +42,88 @@ class MovieService extends BaseService
         return Yii::$app->db->createCommand($sql)->bindParam(':movieId', $id)->queryOne();
     }
 
-    public function isWishMovie($userId, $movieId)
+    /**
+     * @param $userId
+     * @param $movieId
+     * @return bool
+     */
+    public function isWishMovie($userId, $movieId): bool
     {
         $sql = $this->getIsWishMovieSql();
         $values = [
             ':userId' => $userId,
             ':movieId' => $movieId,
         ];
-        $result = Yii::$app->db->createCommand($sql)->bindValues($values)->query();
-        return empty($result) ? false : true;
+        $result = Yii::$app->db->createCommand($sql)->bindValues($values)->queryOne();
+        return $result ? true : false;
     }
 
-    private function getIsWishMovieSql()
+    public function addWishMovie($userId, $movieId)
+    {
+        $sql = $this->getAddWishMovieSql();
+        $values = [
+            ':userId' => $userId,
+            ':movieId' => $movieId,
+        ];
+        $updateWishNumberSql = $this->getUpdateWishNumberSql();
+        Yii::$app->db->createCommand($sql)->bindValues($values)->execute();
+        Yii::$app->db->createCommand($updateWishNumberSql)->bindValue(':movieId', $movieId)->execute();
+    }
+
+    public function cancelWishMovie($userId, $movieId)
+    {
+        Yii::$app->db->transaction(function () use ($userId, $movieId) {
+            $deleteWishMovieSql = $this->getDeleteWishMovieSql();
+            $updateWishNumberSql = $this->getUpdateWishNumberSql(false);
+
+            Yii::$app->db->createCommand($deleteWishMovieSql)->bindValues([
+                ':userId' => $userId,
+                ':movieId' => $movieId
+            ])->execute();
+
+            Yii::$app->db->createCommand($updateWishNumberSql)->bindValue(':movieId', $movieId)->execute();
+        });
+    }
+
+    /**
+     * @param bool $isAdd
+     * @return string
+     */
+    private function getUpdateWishNumberSql(bool $isAdd = true): string
+    {
+        if ($isAdd) {
+            return <<<SQL
+UPDATE t_movie SET wish_num = wish_num + 1 WHERE movie_id = :movieId;
+SQL;
+        } else {
+            return <<<SQL
+UPDATE t_movie SET wish_num = IF(wish_num > 0, wish_num - 1, 0) WHERE movie_id = :movieId;
+SQL;
+        }
+    }
+
+    /**
+     * @return string
+     */
+    private function getDeleteWishMovieSql(): string
+    {
+        return <<<SQL
+DELETE FROM t_wishmovie WHERE user_id = :userId AND movie_id =:movieId;
+SQL;
+    }
+
+    private function getAddWishMovieSql(): string
+    {
+        return <<<SQL
+INSERT INTO t_wishmovie(user_id,movie_id) VALUES(:userId,:movieId);
+SQL;
+    }
+
+    private function getIsWishMovieSql(): string
     {
         return <<<SQL
 SELECT * FROM t_wishmovie WHERE user_id = :userId AND movie_id = :movieId LIMIT 1;
 SQL;
-
     }
 
     public function getViewMovieSql()

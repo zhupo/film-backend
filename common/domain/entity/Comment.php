@@ -14,9 +14,11 @@ class Comment extends Entity
 {
     public const ENTITY_TYPE_PHOTO = 1;
 
+    public const IS_PASS = 1;
+
     public static function tableName()
     {
-        return 'comment';
+        return 't_comment';
     }
 
     /**

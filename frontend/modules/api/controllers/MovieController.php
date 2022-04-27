@@ -18,9 +18,9 @@ class MovieController extends BaseController
     }
 
     /**
-     * @return \string[][][]
+     * @return array
      */
-    public function actionIndex()
+    public function actionIndex(): array
     {
         return [
             'data' => $this->service->getMovies()
@@ -31,7 +31,7 @@ class MovieController extends BaseController
      * @param $movieName
      * @return array
      */
-    public function actionSearch($movieName)
+    public function actionSearch($movieName): array
     {
         return [
             'statusCode' => 200,
@@ -43,7 +43,7 @@ class MovieController extends BaseController
      * @param $cinemaName
      * @return array
      */
-    public function actionSearchCinema($cinemaName)
+    public function actionSearchCinema($cinemaName): array
     {
         return [
             'statusCode' => 200,
@@ -56,7 +56,7 @@ class MovieController extends BaseController
      * @param $id
      * @return array
      */
-    public function actionView($id)
+    public function actionView($id): array
     {
         return [
             'statusCode' => 200,
@@ -64,11 +64,36 @@ class MovieController extends BaseController
         ];
     }
 
+    /**
+     * @return array
+     */
+    public function actionAddWishMovie(): array
+    {
+        $userId = $this->request->post('userId');
+        $movieId = $this->request->post('movieId');
+        $this->service->addWishMovie($userId, $movieId);
+        return [
+            'statusCode' => 200
+        ];
+    }
+
     public function actionIsWishMovie($userId, $movieId)
     {
+        $result = $this->service->isWishMovie($userId, $movieId);
         return [
-            'statusCode' => 200,
-            'data' => $this->service->isWishMovie($userId, $movieId)
+            'statusCode' => $result ? 200 : 500
         ];
+    }
+
+    /**
+     * @return array
+     */
+    public function actionCancelWishMovie(): array
+    {
+        $userId = $this->request->post('userId');
+        $movieId = $this->request->post('movieId');
+
+        $this->service->cancelWishMovie($userId, $movieId);
+        return ['statusCode' => 200];
     }
 }

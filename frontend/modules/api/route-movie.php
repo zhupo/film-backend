@@ -20,6 +20,9 @@ return [
             'GET view' => 'movie/view',
             //'GET is-wish-movie' => 'movie/isWishMovie',
             'GET is-wish-movie' => 'movie/is-wish-movie',
+            //'POST add-wish-movie' => 'movie/addWishMovie',
+            'POST add-wish-movie' => 'movie/add-wish-movie',
+            'POST cancel-wish-movie' => 'movie/cancel-wish-movie',
             // GET /lines/{id}
 //            'GET {id}' => 'movie/view',
         ],

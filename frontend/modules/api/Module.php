@@ -32,7 +32,7 @@ class Module extends \yii\base\Module implements BootstrapInterface
                     require __DIR__ . '/route-movie.php',
                     require __DIR__ . '/route-cinema.php',
                     require __DIR__ . '/route-user.php',
-                    require __DIR__ . '/route-comment.php',
+                    require __DIR__ . '/route-comment.php'
                 )
             ],
             [

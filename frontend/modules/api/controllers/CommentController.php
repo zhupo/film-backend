@@ -31,6 +31,22 @@ class CommentController extends BaseController
         ];
     }
 
+    /**
+     * @param $userId
+     * @param $movieId
+     * @return array
+     * @throws \yii\db\Exception
+     */
+    public function actionView($userId, $movieId): array
+    {
+        $comment = $this->service->getCommentByUserAndMovieId($userId, $movieId);
+
+        return [
+            'successCode' => 200,
+            'data' => $comment
+        ];
+    }
+
     public function actionCreate()
     {
         $comment = new Comment();

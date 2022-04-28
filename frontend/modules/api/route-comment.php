@@ -12,6 +12,8 @@ return [
         'patterns' => [
             // GET /comments
             'GET' => 'comment/index',
+            // GET /comments/view?userId=1&movieId=2
+            'view' => 'comment/view'
         ],
     ],
 ];

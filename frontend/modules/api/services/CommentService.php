@@ -16,6 +16,26 @@ class CommentService extends BaseService
         ])->queryAll();
     }
 
+    /**
+     * @param $userId
+     * @param $movieId
+     * @return array|\yii\db\DataReader
+     * @throws \yii\db\Exception
+     */
+    public function getCommentByUserAndMovieId($userId, $movieId)
+    {
+        $sql = <<<SQL
+SELECT * FROM t_comment WHERE user_id = :userId AND movie_id = :movieId LIMIT 1;
+SQL;
+        $result = \Yii::$app->db->createCommand($sql)->bindValues([
+            ':userId'  => $userId,
+            ':movieId' => $movieId
+        ])->queryOne();
+        $result = $result == false ? [] : $result;
+
+        return $result;
+    }
+
     private function getAllUserPassCommentSql()
     {
         return <<<SQL

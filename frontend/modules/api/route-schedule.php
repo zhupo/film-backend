@@ -5,15 +5,15 @@ use yii\rest\UrlRule;
 return [
     [
         'class' => UrlRule::class,
-        'controller' => ["api/comments" => "api"],
+        'controller' => ["api/schedules" => "api"],
         'tokens' => [
             '{id}' => '<id:\\d+>',
         ],
         'patterns' => [
-            // GET /comments
-            'GET' => 'comment/index',
+            // GET /schedules/search-by-movie-id?movieId=1
+            'GET search-by-movie-id' => 'schedule/get-schedule-by-movie-id',
             // GET /comments/view?userId=1&movieId=2
-            'GET view' => 'comment/view'
+            'GET view' => 'schedule/view'
         ],
     ],
 ];

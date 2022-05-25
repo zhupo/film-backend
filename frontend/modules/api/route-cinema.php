@@ -10,8 +10,12 @@ return [
             '{id}' => '<id:\\d+>',
         ],
         'patterns' => [
-            // GET /movies
+            // GET /cinema
             'GET' => 'cinema/index',
+            // GET /cinema/view?id=1
+            'GET view' => 'cinema/view',
+            //
+            'GET get-current-cinema-movie-schedule' => 'cinema/get-current-cinema-movie-schedule'
         ],
     ],
 ];

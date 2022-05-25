@@ -47,6 +47,17 @@ class CommentController extends BaseController
         ];
     }
 
+    public function actionUpdate()
+    {
+        $postData = Yii::$app->request->post();
+        $result = $this->service->updateComment($postData);
+
+        return [
+            'successCode' => 200,
+            'data' => $result
+        ];
+    }
+
     public function actionCreate()
     {
         $comment = new Comment();

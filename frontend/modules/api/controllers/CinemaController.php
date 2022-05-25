@@ -25,4 +25,24 @@ class CinemaController extends BaseController
             'data' => $this->service->getCinemaList(),
         ];
     }
+
+    /**
+     * @param int $id
+     * @return array
+     */
+    public function actionView(int $id)
+    {
+        return [
+            'successCode' => 200,
+            'data' => $this->service->getCinemaById($id)
+        ];
+    }
+
+    public function actionGetCurrentCinemaMovieSchedule(int $id)
+    {
+        return [
+            'successCode' => 200,
+            'data' => $this->service->getCurrentCinemaMovieSchedule($id)
+        ];
+    }
 }

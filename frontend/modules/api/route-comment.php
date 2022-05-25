@@ -13,7 +13,9 @@ return [
             // GET /comments
             'GET' => 'comment/index',
             // GET /comments/view?userId=1&movieId=2
-            'GET view' => 'comment/view'
+            'GET view' => 'comment/view',
+            // POST /comments/update
+            'POST update' => 'comment/update'
         ],
     ],
 ];
